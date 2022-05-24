@@ -44,7 +44,7 @@ router.post('/register', checkUsernameFree, checkPasswordLength, (req, res, next
  */
 
 router.post('/login', checkUsernameExists, (req, res) => {
-
+  res.json('login')
 })
 /**
   2 [POST] /api/auth/login { "username": "sue", "password": "1234" }
@@ -63,7 +63,7 @@ router.post('/login', checkUsernameExists, (req, res) => {
  */
 
 router.get('/logout', (req, res) => {
-
+  res.json('logout')
 })
 /**
   3 [GET] /api/auth/logout

@@ -5,7 +5,7 @@ const cors = require("cors");
 const authRouter = require('./auth/auth-router')
 const userRouter = require('./users/users-router')
 const session = require('express-session')
-const Store = require('connect-session-knex')
+const Store = require('connect-session-knex')(session)
 const knex = require('../data/db-config')
 /**
   Do what needs to be done to support sessions with the `express-session` package!
@@ -23,8 +23,8 @@ const knex = require('../data/db-config')
 const server = express();
 
 server.use(session({
-  name: 'pumpkinpie',
-  secret: '42',
+  name: 'chocolatechip',
+  secret: 'shh',
   saveUninitialized: false,
   resave: false,
   store: new Store({
